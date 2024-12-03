@@ -19,6 +19,7 @@ pipeline {
                 sh "docker build -t mavenwebapp ."
                 sh "docker tag mavenwebapp altamash212/mavenwebapp"
                 sh "docker push mavenwebapp"
+                withCredentials([usernameColonPassword(credentialsId: 'Docker_credentials', variable: '')])
             }
         }
             
