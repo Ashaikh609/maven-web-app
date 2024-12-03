@@ -17,6 +17,7 @@ pipeline {
     stage('Docker image Build') {
             steps {
                 sh "docker build -t mavenwebapp ."
+                sh "docker tag mavenwebapp altamash212/mavenwebapp"
             }
         }
             
