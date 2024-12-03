@@ -7,6 +7,12 @@ pipeline {
                 git branch: 'main', url:  'https://github.com/Ashaikh609/maven-web-app.git'
             }
         }
+
+    stage('Build Application') {
+            steps {
+                sh "mvn clean package"
+            }
+        }
             
     }
 }
